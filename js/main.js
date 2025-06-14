@@ -15,3 +15,12 @@ Notification.requestPermission().then((permission) => {
     });
   }
 });
+
+window.onload = () => {
+  if ('Notification' in window && Notification.permission === 'granted') {
+    new Notification('Witaj ponownie!', {
+      body: 'Dzięki, że wróciłeś!',
+      icon: 'images/cat3.png'
+    });
+  }
+};
